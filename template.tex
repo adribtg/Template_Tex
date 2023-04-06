@@ -1,0 +1,158 @@
+\documentclass[12pt]{article} % Type de document, taille de police et format A4
+%packages
+\usepackage[top=2cm, bottom=3cm, left=2cm, right=2cm]{geometry} %définition de la marge
+\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc} %Codage des caractères (accents)
+\usepackage[cyr]{aeguill} %Guillemets français et anglais
+\usepackage{graphicx} %Insertion des images et documents
+\usepackage{fancyhdr} % en-tête et bas de page
+\usepackage{wrapfig} % Intégrer des images avec du texte
+\usepackage{enumitem} % Mettre des textbullet dans les itemize
+\usepackage[xetex,pdfborder={0 0 0}]{hyperref} %hyperliens dans le document avec xetex
+\usepackage{amsmath, amsthm}
+\usepackage{amsfonts,amssymb}
+\usepackage{float}
+\usepackage{url}
+\usepackage{array}
+\usepackage[bottom]{footmisc} % Bon placement des footnotes
+\usepackage{listings} %Intégration de code
+\usepackage[most]{tcolorbox} %Boites pour le code
+\usepackage{fontspec} %Changement de police (pour le code notamment)
+\usepackage{xcolor}
+\usepackage{tocloft} % Pour la mise en page de la liste des figures
+
+% --------------- PYTHON --------------- %
+% Usage : \begin{PyCode}{*Nom de la boite*} \end{PyCode}
+
+\newfontfamily{\ttconsolas}{Consolas}[Scale=1] %Récupération de la police Consolas / scale = grosseur du code
+
+%Couleurs utilisées dans le code
+\definecolor{commentaires}{rgb}{0.4,0.7,0.33}
+\definecolor{backgroundcolor}{rgb}{0.12,0.12,0.12}
+\definecolor{numberline}{rgb}{0.9,0.9,0.9}
+\definecolor{stringcolor}{rgb}{0.81,0.57,0.47}
+\definecolor{keyword1}{rgb}{0.34,0.61,0.84}
+\definecolor{keyword2}{rgb}{0.77,0.53,0.75}
+\definecolor{keyword3}{rgb}{0.61,0.86,1}
+\definecolor{boxedges}{rgb}{0.2,0.2,0.2}
+
+%Style du code
+\lstdefinestyle{py}{
+language={Python},
+keywords=[1]{sort,lambda,elif,for,def,class,print,await,assert,async,del,continue,break},
+keywords=[2]{import,as,return,if,else,elif,for,from,with,try,while},
+keywords=[3]{True,False,int,float,str,len,None,and,or,not,in,is},
+commentstyle=\color{commentaires},
+keywordstyle=[1]\color{keyword1},
+keywordstyle=[2]\color{keyword2},
+keywordstyle=[3]\color{keyword3},
+numberstyle=\color{numberline},
+stringstyle=\color{stringcolor},
+basicstyle=\color{white}\ttconsolas,
+breakatwhitespace=false,
+breaklines=true,
+captionpos=b,
+numbers=none,
+keepspaces=true,
+showspaces=false,
+showstringspaces=false,
+showtabs=false,
+tabsize=4,
+rulecolor=\color{black},
+extendedchars=true,
+}
+\lstset{style=py}
+
+%Définition de l'environnement qui crée la boite
+\newtcblisting{PyCode}[2][]{
+colback=backgroundcolor,
+colframe=boxedges,
+coltitle=white!85!black,
+fonttitle=\bfseries\sffamily,
+title=#2,#1,
+listing only,
+listing options={style=py},
+center title
+}
+
+% --------------- Fin PYTHON --------------- %
+% ----------------- Début CPP ----------------- %
+% Usage : \begin{CppCode}{*Nom de la boite*} \end{CppCode}
+\definecolor{vertccp}{rgb}{0.23,0.76,0.69}
+\definecolor{jauneccp}{rgb}{0.84,0.80,0.48}
+\definecolor{violetccp}{rgb}{0.78,0.61,1}
+\lstdefinestyle{cpp}{
+language={C},
+keywords=[1]{class,public,double,struct},
+keywords=[2]{vector,string,map},
+keywords=[3]{Instance, TreeNode},
+commentstyle=\color{commentaires},
+keywordstyle=[1]\color{keyword3},
+keywordstyle=[2]\color{vertccp},
+keywordstyle=[3]\color{jauneccp},
+numberstyle=\color{numberline},
+stringstyle=\color{stringcolor},
+basicstyle=\color{white}\ttconsolas,
+breakatwhitespace=false,
+breaklines=true,
+captionpos=b,
+numbers=none,
+keepspaces=true,
+showspaces=false,
+showstringspaces=false,
+showtabs=false,
+tabsize=4,
+rulecolor=\color{black},
+extendedchars=true,
+}
+\lstset{style=cpp}
+
+%Définition de l'environnement qui crée la boite
+\newtcblisting{CppCode}[2][]{
+colback=backgroundcolor,
+colframe=boxedges,
+coltitle=white!85!black,
+fonttitle=\bfseries\sffamily,
+title=#2,#1,
+listing only,
+listing options={style=cpp},
+center title
+}
+% ----------------- Fin CPP ----------------- %
+
+% --------------- TERMINAL --------------- %
+% Usage : \begin{BashBox}{*Nom de la boite*} \end{BashBox}
+\lstdefinestyle{terminal}{
+    backgroundcolor=\color{backgroundcolor},
+    basicstyle=\color{white}\ttfamily,
+    commentstyle=\color{green}\ttfamily,
+    keywordstyle=\color{cyan}\ttfamily, %echo
+    stringstyle=\color{red}\ttfamily,
+    %emph={dir,ls,git,make,gcc},
+    %emphstyle=\color{blue}\bfseries,
+    language=bash,
+    extendedchars=true,
+}
+\lstset{style=terminal}
+
+\newtcblisting{BashBox}[2][]{
+colback=black,
+colframe=boxedges,
+coltitle=white!85!black,
+fonttitle=\large\bfseries\sffamily,
+title=#2,#1,
+listing only,
+listing options={style=terminal},
+center title
+}
+% --------------- Fin TERMINAL --------------- %
+
+
+\title{Titre de la fiche}
+\date{}
+
+\begin{document}
+\maketitle
+\section*{Introduction}
+
+\end{document}
